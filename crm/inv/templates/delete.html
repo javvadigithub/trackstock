@@ -1,0 +1,12 @@
+{% extends 'main.html %}
+{% load static %}
+{% block content %}
+
+  <p>Are You Sure Want You Delete this "{{item}}"?</p>
+
+  <form method="post">
+    <a href="{% url 'home' %}">Cancel</a>
+    <input type="submit" name="confirm">
+  </form>
+
+{% endblock %}
