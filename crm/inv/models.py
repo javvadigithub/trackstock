@@ -25,7 +25,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     stock = models.CharField(max_length=8, null=True)
     category = models.CharField(max_length=200, null=True, choices=CATEGORY)
-    description = models.CharField(max_length=200, null=True)
+    # description = models.CharField(max_length=200, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     tags = models.ManyToManyField(Tag)
 
@@ -38,10 +38,13 @@ class Order(models.Model):
             ('Out for Delivery', 'Out for Delivery'),
             ('Delivered', 'Delivered'),
             )
+    id = models.AutoField(primary_key=True)
     customer = models.ForeignKey(Customer, null=True, on_delete = models.SET_NULL)
     product = models.ForeignKey(Product, null=True, on_delete = models.SET_NULL)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     status = models.CharField(max_length=200, null=True, choices=STATUS)
+    description = models.CharField(max_length=1000, null=True)
+    date_delivered = models.DateTimeField(auto_now_add=False, null=True)
     # note = models.CharField(max_length=1000, null=True)
 
     def __str__(self):

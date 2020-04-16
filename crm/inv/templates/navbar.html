@@ -1,11 +1,26 @@
+{% load static %}
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #2a87bd;
+    margin-right: 20px;
+  }
+
+
+
+</style>
+
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
     <h5 class="my-0 mr-md-auto font-weight-normal"><b><i>Track-Stock</i></b></h5>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="{% url  'home' %}">Dashboard</a>
-      <a class="p-2 text-dark" href="{% url  'products' %}">Products</a>
+      <a class="hello-msg" href="{% url  'home' %}">Dashboard</a>
+      <a class="hello-msg" href="{% url  'products' %}">Products</a>
+
+      <!-- <a class="p-2 text-dark" href="#"></a>
       <a class="p-2 text-dark" href="#"></a>
-      <a class="p-2 text-dark" href="#"></a>
-      <a class="p-2 text-dark" href="#"></a>
+      <a class="p-2 text-dark" href="#"></a> -->
     </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
+    <span class="hello-msg">Hello, <b><i>{{request.user}}</i></b> </span>
+    <span class="hello-msg"><a class="btn btn-outline-primary" href="{% url 'logout' %}"><b><i>Logout</i></b></a></span>
   </div>

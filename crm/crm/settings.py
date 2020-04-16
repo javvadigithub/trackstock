@@ -25,7 +25,7 @@ SECRET_KEY = 'l8$bn2l&^6bx99a#iv-8kj4ddgys0f*o6^2e_vzs+@v6iga-=%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.5']
+ALLOWED_HOSTS = ['192.168.0.5', '192.168.38.250', '192.168.0.3']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inv',
+    'django_filters',
 
 ]
 
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 

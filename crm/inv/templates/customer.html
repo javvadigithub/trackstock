@@ -49,20 +49,22 @@
 </div>
 
 
-<div class="row">
+
+
+
+<!-- <div class="row">
     <div class="col">
         <div class="card card-body">
-
             <form method="get">
-
-                <!-- <button class="btn btn-primary" type="submit"></button> -->
+              {{myFilter.form}}
+                <button class="btn btn-primary" type="submit">Search</button>
             </form>
 
         </div>
     </div>
 </div>
 
-
+ -->
 
 <div class="row">
     <div class="col">
@@ -70,19 +72,25 @@
             <div class="card card-body">
                 <table class="table table-sm">
                     <tr>
+                        <th>Unique ID</th>
                         <th>Product</th>
                         <th>Category</th>
+                        <th>Description</th>
                         <th>Date Orderd</th>
                         <th>Status</th>
+                        <th>Date Delivered</th>
                         <th>Update</th>
                         <th>Remove</th>
                     </tr>
                     {% for order in orders %}
                     <tr>
+                        <td>{{order.id}}</td>
                         <td>{{order.product}}</td>
                         <td>{{order.product.category}}</td>
+                        <td>{{order.description}}</td>
                         <td>{{order.date_created}}</td>
                         <td>{{order.status}}</td>
+                        <td>{{order.date_delivered}}</td>
                         <td><a type="button" class="btn btn-outline-success" href="#">Update</a></td>
                         <td><a type="button" class="btn btn-outline-danger" href="#">Remove</a></td>
                     </tr>
